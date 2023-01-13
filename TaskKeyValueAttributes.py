@@ -30,12 +30,14 @@ class TaskKeyValueAttributes(AnsibleLintRule):
     keyvalue_regex = re.compile(r"(?:\s+|^)[^=]+=[^=]+(?:\s+|$)")
 
     VALID_KEYS = [
-        'name', 'action', 'when', 'async', 'poll', 'notify', 'first_available_file', 'include',
-        'include_tasks', 'import_tasks', 'import_playbook', 'tags', 'register', 'ignore_errors',
-        'delegate_to', 'local_action', 'transport', 'remote_user', 'sudo', 'sudo_user',
-        'sudo_pass', 'when', 'connection', 'environment', 'args', 'any_errors_fatal',
-        'changed_when', 'failed_when', 'check_mode', 'delay', 'retries', 'until', 'su',
-        'su_user', 'su_pass', 'no_log', 'run_once', 'become', 'become_user', 'become_method',
+        'name', 'action', 'when', 'async', 'poll', 'notify',
+        'first_available_file', 'include', 'include_tasks', 'import_tasks',
+        'import_playbook', 'tags', 'register', 'ignore_errors', 'delegate_to',
+        'local_action', 'transport', 'remote_user', 'sudo', 'sudo_user',
+        'sudo_pass', 'when', 'connection', 'environment', 'args',
+        'any_errors_fatal', 'changed_when', 'failed_when', 'check_mode',
+        'delay', 'retries', 'until', 'su', 'su_user', 'su_pass', 'no_log',
+        'run_once', 'become', 'become_user', 'become_method', 'loop',
     ]
 
     def matchplay(self, file: Lintable, play: dict[str, Any]) -> list[MatchError]:
